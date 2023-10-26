@@ -13,54 +13,28 @@
     */
 
     //Entrada
-    let Ssalarios = 0;
-    let maiorI;
-    let menorI;
-    let QMulheres = 0;
-    let MSalario;
-    let IMSalario;
-    let SMSalario;
 
-    while (idade > 0) {
-        const idade = Number(prompt("Digite a idade (ou idade negativa para encerrar):"))
-        const sexo = prompt("Digite o sexo (M/F):").toUpperCase();
-        const salario = Number(prompt("Digite o salário:"));
-
-        Ssalarios += salario;
-
-        if (idade > maiorI) {
-            maiorI = idade;
-        }
-        if (idade < menorI) {
-            menorI = idade;
-        }
-
-        if (sexo === "F") {
-            QMulheres++;
-        }
-
-        if (salario < MSalario) {
-            MSalario = salario;
-            IMSalario = idade;
-            SMSalario = sexo;
-        }
-    }
-
-    const mediaS = Ssalarios / (QMulheres + 1);
-
-    // Exibe os resultados
-    alert(`Resultados da pesquisa:\n
-Média dos salários: R$ ${mediaSalarios.toFixed(2)}\n
-Maior idade: ${maiorIdade} anos\n
-Menor idade: ${menorIdade} anos\n
-Quantidade de mulheres na região: ${quantidadeMulheres}\n
-Idade da pessoa com o menor salário: ${idadeMenorSalario} anos\n
-Sexo da pessoa com o menor salário: ${sexoMenorSalario}`)
-
-
+    let media = "";
+    let maiorIdade = "";
+    let menorIdade  = "";
+    let quantidadeF = "";
+    let idadeMSalario = "";
+    let sexoMSalario = ""; 
+    
     //Processamento
-
+    
+    do {
+        media = parseFloat(prompt(`Qual a média dos salários da região?`).trim().replace(",", "."));
+        maiorIdade = parseInt(prompt(`Qual a maior idade deste grupo?`).trim());
+        menorIdade = parseInt(prompt(`Qual a menor idade deste grupo?`).trim());
+        quantidadeF = parseInt(prompt(`Quantas mulheres há na região?`).trim());
+        idadeMSalario = parseInt(prompt(`Qual a idade da pessoa com o menor salário?`).trim());
+        sexoMSalario  = prompt((`Qual o gênero da pessoa com menor salário?`).trim());
+    } 
+    
+    while (maiorIdade > 0 && menorIdade > 0 && idadeMSalario > 0);
 
     //Saída
+
 
 </script>
