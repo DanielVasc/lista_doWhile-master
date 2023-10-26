@@ -1,0 +1,79 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    Problema: Urna eletrônica
+    Faça um programa que simule a urna eletrônica.
+    A tela a ser apresentada deverá ser da seguinte forma:
+    As opções são:
+    1. Candidato Joãozinho
+    2. Candidato Mariazinha
+    3. Nulo
+    4. Branco
+    Entre com o seu voto:
+
+    O programa deverá ler os votos dos eleitores e, quando for entrado o número 0, apresentar as seguintes
+    informações:
+    a) O número de votos de cada candidato;
+    b) A porcentagem de votos nulos;
+    c) A porcentagem de votos brancos;
+    d) O candidato vencedor.
+    */
+
+    //Entrada
+    let Joaozinho = 0;
+    let Mariazinha = 0;
+    let Nulos = 0;
+    let Brancos = 0;
+    let voto = -1;
+
+    //Processamento
+    while (voto != 0) {
+        voto = Number(prompt(`Insira seu voto\n
+        As opções são:\n
+        1. Candidato Joãozinho\n
+        2. Candidato Mariazinha\n
+        3. Nulo\n
+        4. Branco\n
+        Entre com o 0 para encerrar a votação`));
+
+        if (voto === 1) {
+            Joaozinho++;
+        }
+
+        else if (voto === 2) {
+            Mariazinha++;
+        }
+
+        else if (voto === 3) {
+            Nulos++;
+        }
+
+        else if (voto === 4) {
+            Brancos++;
+        }
+    }
+
+
+    let TVotos = Joaozinho + Mariazinha + Nulos + Brancos;
+    let PNulos = (Nulos / TVotos) * 100;
+    let PBrancos = (Brancos / TVotos) * 100;
+
+    let vencedor = "Empate";
+
+    if (Joaozinho > Mariazinha) {
+        vencedor = "Candidato Joãozinho";
+    }
+
+    else if (Mariazinha > Joaozinho) {
+        vencedor = "Candidato Mariazinha";
+    }
+
+
+    //Saída
+    alert(`Resultados da votação:\n
+    Votos para Candidato Joãozinho: ${Joaozinho}\n
+    Votos para Candidato Mariazinha: ${Mariazinha}\n
+    Porcentagem de votos nulos: ${PNulos.toFixed(2)}%\n
+    Porcentagem de votos brancos: ${PBrancos.toFixed(2)}%\n
+    Candidato vencedor: ${vencedor}`);
+</script>
